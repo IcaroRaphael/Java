@@ -9,15 +9,15 @@ public class EngenheiroCivil {
 	private static String nome;
 	private static int idade;
 
-	public static void setIdade(int idade) {
+	public void setIdade(int idade) {
 		EngenheiroCivil.idade = idade;
 	}
 
-	public static void setNome(String nome) {
+	public void setNome(String nome) {
 		EngenheiroCivil.nome = nome;
 	}
 	
-	public static void exibirDadosPessoais() {
+	public void exibirDadosPessoais() {
 		System.out.println("*** DADOS PESSOAIS ***");
 		System.out.println(nome);
 		System.out.println(idade + " anos");
@@ -28,15 +28,17 @@ public class EngenheiroCivil {
 		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
 		
+		EngenheiroCivil engenheiro = new EngenheiroCivil();
+		
 		System.out.print("Nome do engenheiro: ");
 		String nome = scan.nextLine();
-		setNome(nome);
+		engenheiro.setNome(nome);
 		
 		System.out.print("Idade do engenheiro: ");
 		int idade = scan.nextInt();
-		setIdade(idade);
+		engenheiro.setIdade(idade);
 		
-		exibirDadosPessoais();
+		engenheiro.exibirDadosPessoais();
 		System.out.println("*** DADOS RETÂNGULO ***");
 		Retangulo.definirLados(4.7, 8.2);
 		System.out.printf("Area: %.2f\n", Retangulo.area());
