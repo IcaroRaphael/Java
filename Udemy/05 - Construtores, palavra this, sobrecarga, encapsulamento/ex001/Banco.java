@@ -12,6 +12,14 @@ public class Banco {
 		Banco.valorConta = valorConta;
 		Banco.senhaBanco = senhaBanco;
 	}
+
+	public static int getNumeroConta() {
+		return numeroConta;
+	}
+
+	public static int getSenhaBanco() {
+		return senhaBanco;
+	}
 	
 	public static String getNomeTitular() {
 		return nomeTitular;
@@ -34,15 +42,7 @@ public class Banco {
 	}
 	
 	public static void saque(double valorSaque) {
-		Banco.valorConta -= valorSaque;
-	}
-
-	public static int getNumeroConta() {
-		return numeroConta;
-	}
-
-	public static int getSenhaBanco() {
-		return senhaBanco;
+		Banco.valorConta = Banco.valorConta - 5 - valorSaque;
 	}
 
 }
