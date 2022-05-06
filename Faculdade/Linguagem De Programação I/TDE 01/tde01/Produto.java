@@ -3,50 +3,50 @@ package tde01;
 public class Produto {
 	
 	//ATRIBUTOS
-	private static int codigo;
-	private static String descricao;
-	private static double valorVenda;
-	private static double valorCusto;
-	private static boolean promocao;
+	private int codigo;
+	private String descricao;
+	private double valorVenda;
+	private double valorCusto;
+	private boolean promocao;
 	
 	//CONSTRUTOR
 	public Produto(int codigo, String descricao, double valorVenda, double valorCusto, boolean promocao) {
-		Produto.codigo = codigo;
-		Produto.descricao = descricao;
-		Produto.valorVenda = valorVenda;
-		Produto.valorCusto = valorCusto;
-		Produto.promocao = promocao;
+		this.codigo = codigo;
+		this.descricao = descricao;
+		this.valorVenda = valorVenda;
+		this.valorCusto = valorCusto;
+		this.promocao = promocao;
 	}
 	
-	//MÉTODOS GETTERS AND SETTERS
-	public static int getCodigo() {
+	//M?TODOS GETTERS AND SETTERS
+	public int getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {
-		Produto.codigo = codigo;
+		this.codigo = codigo;
 	}
-	public static String getDescricao() {
+	public String getDescricao() {
 		return descricao;
 	}
 	public void setDescricao(String descricao) {
-		Produto.descricao = descricao;
+		this.descricao = descricao;
 	}
-	public static double getValorVenda() {
+	public double getValorVenda() {
 		return valorVenda;
 	}
 	public void setValorVenda(double valorVenda) {
-		Produto.valorVenda = valorVenda;
+		this.valorVenda = valorVenda;
 	}
-	public static double getValorCusto() {
+	public double getValorCusto() {
 		return valorCusto;
 	}
 	public void setValorCusto(double valorCusto) {
-		Produto.valorCusto = valorCusto;
+		this.valorCusto = valorCusto;
 	}
-	public static boolean isPromocao() {
+	public boolean isPromocao() {
 		return promocao;
 	}
 	public void setPromocao(boolean promocao) {
-		Produto.promocao = promocao;
+		this.promocao = promocao;
 	}
 }
