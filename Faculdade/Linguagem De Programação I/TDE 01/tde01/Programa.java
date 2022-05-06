@@ -26,14 +26,14 @@ public class Programa {
         venda2.imprimir();
 
         linha();
-        venda2 = new Venda();
-        venda2.setProduto(produto2);
-        venda2.setVendedor(vendedor2);
-        venda2.setQuantidadeItens(2);
-        venda2.efetuarDesconto(30);
-        venda2.calcularValor();
-        venda2.calcularComissao();
-        venda2.imprimir();
+        Venda venda3 = new Venda();
+        venda3.setProduto(produto2);
+        venda3.setVendedor(vendedor2);
+        venda3.setQuantidadeItens(2);
+        venda3.efetuarDesconto(30);
+        venda3.calcularValor();
+        venda3.calcularComissao();
+        venda3.imprimir();
     }
 
     public static void linha(){
