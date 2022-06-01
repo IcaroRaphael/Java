@@ -3,41 +3,41 @@ package tde01;
 public class Vendedor {
 	
 	//ATRIBUTOS
-	private static String nome;
-	private static int codigo;
-	private static double comissao;
-	private static String endereco;
+	private String nome;
+	private int codigo;
+	private double comissao = 5;
+	private String endereco;
 	
 	//CONSTRUTOR
 	public Vendedor(String nome, String endereco, int codigo) {
-		Vendedor.nome = nome;
-		Vendedor.endereco = endereco;
-		Vendedor.codigo = codigo;
+		this.nome = nome;
+		this.endereco = endereco;
+		this.codigo = codigo;
 	}
 	
-	//MÉTODOS GETTERS AND SETTERS
-	public static String getNome() {
+	//M?TODOS GETTERS AND SETTERS
+	public String getNome() {
 		return nome;
 	}
 	public void setNome(String nome) {
-		Vendedor.nome = nome;
+		this.nome = nome;
 	}
-	public static int getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 	public void setCodigo(int codigo) {
-		Vendedor.codigo = codigo;
+		this.codigo = codigo;
 	}
-	public static double getComissao() {
+	public double getComissao() {
 		return comissao;
 	}
-	public static void setComissao(double comissao) {
-		Vendedor.comissao = comissao;
+	public void setComissao(double comissao) {
+		this.comissao = comissao;
 	}
-	public static String getEndereco() {
+	public String getEndereco() {
 		return endereco;
 	}
 	public void setEndereco(String endereco) {
-		Vendedor.endereco = endereco;
+		this.endereco = endereco;
 	}
 }

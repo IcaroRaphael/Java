@@ -3,19 +3,32 @@ package tde01;
 public class Venda {
 
 	//ATRIBUTOS
-	private int produto = Produto.getCodigo();
-	private String vendedor = Vendedor.getNome();
-	public static double desconto;
+	Produto produto;
+	Vendedor vendedor;
+	public double desconto;
 	private int quantidadeItens;
 	public double valor;
 	
-	//MÉTODOS GETTERS AND SETTERS
-	public int getProduto() {
+	//M?TODOS GETTERS AND SETTERS
+
+
+	public Produto getProduto() {
 		return produto;
 	}
-	public String getVendedor() {
+
+	public void setProduto(Produto produto) {
+		this.produto = produto;
+	}
+
+
+	public Vendedor getVendedor() {
 		return vendedor;
 	}
+
+	public void setVendedor(Vendedor vendedor) {
+		this.vendedor = vendedor;
+	}
+
 	public int getQuantidadeItens() {
 		return quantidadeItens;
 	}
@@ -23,21 +36,21 @@ public class Venda {
 		this.quantidadeItens = quantidadeItens;
 	}
 	
-	//MÉTODOS
-	public static void efetuarDesconto(double desconto) {
-		double resultado = Produto.getValorVenda() - ((desconto / 100) * Produto.getValorVenda());
-		if(resultado > Produto.getValorCusto()) {
-			Venda.desconto = (desconto / 100) * Produto.getValorVenda();
+	//M?TODOS
+	public void efetuarDesconto(double desconto) {
+		double resultado = produto.getValorVenda() - ((desconto / 100) * produto.getValorVenda());
+		if(resultado > produto.getValorCusto()) {
+			this.desconto = (desconto / 100) * produto.getValorVenda();
 		}
 		else {
-			Venda.desconto = 0;
+			this.desconto = 0;
 		}
 	}
 	
 	public double calcularValor() {
-		this.valor = this.quantidadeItens * Produto.getValorVenda();
-		if(Produto.isPromocao() == true) {
-			return this.valor - (Venda.desconto * getQuantidadeItens());
+		this.valor = this.quantidadeItens * produto.getValorVenda();
+		if(produto.isPromocao() == true) {
+			return this.valor - (this.desconto * getQuantidadeItens());
 		}
 		else {
 			return this.valor;
@@ -45,26 +58,26 @@ public class Venda {
 	}
 	
 	public double calcularComissao() {
-		if(Produto.isPromocao() == true) {
-			return ((Vendedor.getComissao() / 2) / 100) * this.valor;
+		if(produto.isPromocao() == true) {
+			return ((vendedor.getComissao() / 2) / 100) * this.valor;
 		}
 		else {
-			return (Vendedor.getComissao() / 100) * this.valor;
+			return (vendedor.getComissao() / 100) * this.valor;
 		}
 	}
 	
 	public void imprimir() {
 		System.out.println("** VENDEDOR: **");
-		System.out.printf("Código: %d\n", Vendedor.getCodigo());
-		System.out.printf("Nome: %s\n", Vendedor.getNome());
+		System.out.printf("Codigo: %d\n", vendedor.getCodigo());
+		System.out.printf("Nome: %s\n", vendedor.getNome());
 		System.out.printf("Comissão: %.2f\n", calcularComissao());
 		System.out.println("** PRODUTO: **");
 		System.out.printf("Quantidade de itens: %d\n", this.quantidadeItens);
-		System.out.printf("Código: %d\n", Produto.getCodigo());
-		System.out.printf("Descrição: %s\n", Produto.getDescricao());
-		System.out.printf("Valor do produto: %.2f\n", Produto.getValorVenda());
-		System.out.println("Produto está na promoção: " + Produto.isPromocao());
-		System.out.printf("Valor do desconto: %.2f\n", (Venda.desconto) * getQuantidadeItens());
+		System.out.printf("Código: %d\n", produto.getCodigo());
+		System.out.printf("Descrição: %s\n", produto.getDescricao());
+		System.out.printf("Valor do produto: %.2f\n", produto.getValorVenda());
+		System.out.println("Produto está na promoção: " + produto.isPromocao());
+		System.out.printf("Valor do desconto: %.2f\n", (this.desconto) * getQuantidadeItens());
 		System.out.printf("VALOR TOTAL: %.2f\n", calcularValor());
 	}
 }
